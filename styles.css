@@ -129,6 +129,7 @@ a {
     font-weight: bold;
 }
 
+
 @media (max-width: 400px) {
   #info { 
     margin: auto 10px; 
@@ -137,6 +138,6 @@ a {
     margin: 70px auto;
   }
   #foot-er {
-    position: fixed;
+    position: relative;
   }
 }
