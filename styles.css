@@ -112,13 +112,12 @@ h2 {
 }
 
 
-footer {
+#foot-er {
     text-align: center;
-    padding: 5px;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.336);
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
+    background: rgba(0, 0, 0, 0);
+    padding: 15px 0;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -130,14 +129,14 @@ a {
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   #info { 
     margin: auto 10px; 
   }
   .btn-retry {
     margin: 70px auto;
   }
-  footer {
+  #foot-er {
     position: fixed;
   }
 }
