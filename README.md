@@ -1,5 +1,3 @@
----
-
 # 🍽️ Restaurant Async Simulator
 
 Un simulador de pedidos de restaurante interactivo que demuestra el manejo de **operaciones asíncronas en JavaScript** utilizando Promesas y la sintaxis `async/await`. La interfaz cuenta con un diseño estilizado que utiliza técnicas avanzadas de CSS como Glassmorphism y bordes con texturas.
@@ -57,4 +55,3 @@ const bebida = await ordenandoBebida; // El código se detiene aquí hasta que l
 **Desarrollado con ❤️ por Leandra Yanes**
 
 ---
-
