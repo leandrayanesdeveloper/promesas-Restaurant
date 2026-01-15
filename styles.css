@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Bebas Neue';
-    src: url('fonts/BebasNeue-Regular.ttf') format('truetype');
+    src: url('../fonts/BebasNeue-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+    src: url('../fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -32,7 +32,7 @@ body::before {
     width: 100vw;    
     height: 100vh;   
     z-index: -1;     
-    background-image: url('images/32c8f796af5996274903f0929432a7d1.jpg'); 
+    background-image: url('../images/32c8f796af5996274903f0929432a7d1.jpg'); 
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@ h2 {
     border: 10px solid transparent; 
     border-radius: 20px;
     background: linear-gradient(#720808, #660909) padding-box, 
-    url('images/45affed3fb95553030644826edfe2018.jpg') border-box;
+    url('../images/45affed3fb95553030644826edfe2018.jpg') border-box;
     background-size: auto, 250px; 
     background-repeat: no-repeat, repeat;
     padding: 20px;
