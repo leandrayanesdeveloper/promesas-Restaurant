@@ -89,7 +89,7 @@ h2 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.btn-retry {
+#btn-retry {
     font-family: 'Bebas Neue', cursive;
     font-size: 15px;
    letter-spacing: 1px; 
@@ -106,9 +106,18 @@ h2 {
     text-align: center;
 }
 
-.btn-retry:hover {
+#btn-retry:hover {
     background: #7a0a0a;
     transform: scale(1.05);
+}
+
+#btn-retry:disabled {
+    background-color: #380707;
+    box-shadow: 0 2px #6b6d6b;
+    transform: translateY(2px);
+    cursor: not-allowed;
+    color: white;
+
 }
 
 

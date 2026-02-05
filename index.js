@@ -1,7 +1,8 @@
 // Simulación de un sistema de pedidos en un restaurante utilizando promesas y async/await
 
-//selector 
+//selectores del DOM
 const info = document.querySelector ('#info');
+const formBtn = document.querySelector ('#btn-retry');
 
 // Función para imprimir en el HTML
 const imprimirEnPantalla = (mensaje, color = "white") => {
@@ -11,54 +12,51 @@ const imprimirEnPantalla = (mensaje, color = "white") => {
     info.appendChild(p);
     console.log(mensaje);
 };
-
-// definición de probabilidad de exito de un 20%
-const probabilidad = () => {
-    return Math.random () < 0.8;
-}
- 
-// Primera función de promesa 
+// Primera promesa
 const ordenandoBebida =
      new Promise ((resolve, reject) => {
-        setTimeout (() => {
-        
-    if (probabilidad()) {
+        setTimeout (() => { 
+    try {
 resolve ("🥤Bebida ordenada ✅");
-    } else {
+    } catch (error) {
         reject ("No se tomó el pedido ❌. Por favor intenta de nuevo.");
     }
     }, 1000);
-});
- ; 
-
+}); 
 // Segunda promesa
  const pedirPizza = new Promise ((resolve, reject) => {
 setTimeout (( ) => {
-if (probabilidad()) {
+try {
     resolve ('🍕Pizza ordenada ✅');
-} else {
+} catch (error) {
     reject ('No se tomó el pedido ❌. Por favor intenta de nuevo.')
 }
-}, 2000)
- });
+}, 2000);
+});
 
 // tercera promesa
  const ordenandoPostre = new Promise ((resolve, reject) => {
 setTimeout (( ) => {
-if (probabilidad()) {
+try {
     resolve ('🍦Postre ordenado ✅');
-} else {
+} catch (error) {
     reject ('No se tomó el pedido ❌. Por favor intenta de nuevo.')
 }
-}, 3000)
+}, 3000);
  });
 
  // función asíncrona para manejar los pedidos
  async function manejoPedidos() {
 imprimirEnPantalla("Orden de pedidos iniciado 🍽️");
-    // try - intenta obtener el codigo asincrono con el resolve
-    try {
-      
+
+// deshabilitar el botón inicialmente
+formBtn.disabled = false;
+
+// try - intenta obtener el codigo asincrono con el resolve
+    try {   
+        const probabilidad = () => Math.random() < 0.8;
+        if (!probabilidad()) throw new Error();
+
         const bebida = await ordenandoBebida;
         imprimirEnPantalla(bebida, "white");
         const pizza = await pedirPizza;
@@ -66,14 +64,17 @@ imprimirEnPantalla("Orden de pedidos iniciado 🍽️");
         const postre = await ordenandoPostre;
         imprimirEnPantalla(postre, "white");
 
-        imprimirEnPantalla("--------------------------");
-        imprimirEnPantalla("¡La orden completa ha sido entregada! 🥳", "lightgreen");
-      
-    } catch (error) {
-        imprimirEnPantalla(error, "red");
-        imprimirEnPantalla("⚠️ El pedido se canceló.");
-    }
-    
-  }
+            imprimirEnPantalla("--------------------------");
+            imprimirEnPantalla("¡La orden completa ha sido entregada! 🥳", "lightgreen");
+} catch (error) {
+    imprimirEnPantalla("⚠️No se tomó el pedido ❌. Por favor intenta de nuevo.", "red");
+}
+};
+// Evento para recargar la página y reintentar el pedido
+formBtn.addEventListener('click', () => {
+   location.reload();
+});  
 
-  manejoPedidos();
+// Llamada a la función principal
+manejoPedidos();
+
