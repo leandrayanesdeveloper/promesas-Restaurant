@@ -73,6 +73,8 @@ imprimirEnPantalla("Orden de pedidos iniciado 🍽️");
 } catch (error) {
     imprimirEnPantalla("⚠️No se tomó el pedido ❌. Por favor intenta de nuevo.", "red");
 }
+
+   formBtn.disabled: false;  
 };
 // Evento para recargar la página y reintentar el pedido
 formBtn.addEventListener('click', () => {
