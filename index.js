@@ -48,10 +48,7 @@ try {
  // función asíncrona para manejar los pedidos
  async function manejoPedidos() {
 imprimirEnPantalla("Orden de pedidos iniciado 🍽️");
-
-// deshabilitar el botón inicialmente
-formBtn.disabled = false;
-
+     
 // try - intenta obtener el codigo asincrono con el resolve
     try {   
        const valor = Math.random();
@@ -59,12 +56,6 @@ formBtn.disabled = false;
 
         if (probabilidad) {
             console.log(`✅ LOGRADO (${valor.toFixed(3)})`);
-            return true; 
-        } else {
-            console.log(`❌ FALLIDO (${valor.toFixed(3)})`);
-            return false;
-        }
-    
         const bebida = await ordenandoBebida;
         imprimirEnPantalla(bebida, "white");
         const pizza = await pedirPizza;
@@ -73,7 +64,12 @@ formBtn.disabled = false;
         imprimirEnPantalla(postre, "white");
 
             imprimirEnPantalla("--------------------------");
-            imprimirEnPantalla("¡La orden completa ha sido entregada! 🥳", "lightgreen");
+            imprimirEnPantalla("¡La orden completa ha sido entregada! 🥳", "lightgreen");; 
+        } else {
+            console.error(`❌ FALLIDO (${valor.toFixed(3)})`);
+            imprimirEnPantalla("⚠️No se tomó el pedido ❌. Por favor intenta de nuevo.", "red");
+        };
+        
 } catch (error) {
     imprimirEnPantalla("⚠️No se tomó el pedido ❌. Por favor intenta de nuevo.", "red");
 }
