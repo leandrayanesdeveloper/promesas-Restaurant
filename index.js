@@ -49,6 +49,8 @@ try {
  async function manejoPedidos() {
 imprimirEnPantalla("Orden de pedidos iniciado 🍽️");
      
+   formBtn.disabled: true;  
+     
 // try - intenta obtener el codigo asincrono con el resolve
     try {   
        const valor = Math.random();
