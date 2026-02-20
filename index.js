@@ -49,7 +49,7 @@ try {
  async function manejoPedidos() {
 imprimirEnPantalla("Orden de pedidos iniciado 🍽️");
      
-   formBtn.disabled: false;  
+   formBtn.disabled = false;  
      
 // try - intenta obtener el codigo asincrono con el resolve
     try {   
