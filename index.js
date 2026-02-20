@@ -56,7 +56,7 @@ formBtn.disabled = false;
     try {   
         const probabilidad = () => Math.random() < 0.5;
         if (!probabilidad()) throw new Error();
-
+        
         const bebida = await ordenandoBebida;
         imprimirEnPantalla(bebida, "white");
         const pizza = await pedirPizza;
