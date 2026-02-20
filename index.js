@@ -55,7 +55,8 @@ formBtn.disabled = false;
 // try - intenta obtener el codigo asincrono con el resolve
     try {   
         const probabilidad = () => Math.random() < 0.5;
-        if (probabilidad < 0.5) {
+        
+        if (probabilidad()) {
             console.log(`✅ LOGRADO (${valor.toFixed(3)})`);
             return true;
         } else {
