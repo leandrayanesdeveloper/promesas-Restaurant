@@ -54,15 +54,17 @@ formBtn.disabled = false;
 
 // try - intenta obtener el codigo asincrono con el resolve
     try {   
-        const valor = Math.random(); 
-        const probabilidad = () => valor < 0.5; 
-        if (probabilidad()) {
-        console.log(`✅ LOGRADO (${valor.toFixed(3)})`);
-        return true;
+       const valor = Math.random();
+        const probabilidad = valor < 0.5;
+
+        if (probabilidad) {
+            console.log(`✅ LOGRADO (${valor.toFixed(3)})`);
+            return true; 
         } else {
-         console.log(`❌ FALLIDO (${valor.toFixed(3)})`);
-        return false;
-        };
+            console.log(`❌ FALLIDO (${valor.toFixed(3)})`);
+            return false;
+        }
+    
         const bebida = await ordenandoBebida;
         imprimirEnPantalla(bebida, "white");
         const pizza = await pedirPizza;
